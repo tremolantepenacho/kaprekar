@@ -93,14 +93,40 @@ public class Kaprekar {
                      res[1]=var[0]+var[1]*10+var[2]*100+var[3]*1000;
                      return res;
         }
-        
+        return res;
          
     }
     private int[] ordenaDos(String num){
         
+        int res[]=new int[2];
+        int uno=num.charAt(0);
+        int dos=num.charAt(1);
+        if (uno>dos){
+            res[0]=uno;
+            res[1]=dos;
+        }
+        else{
+            res[0]=dos;
+            res[1]=uno;
+        }
+        return res;
     }
     private int[] ordenaTres(String num){
         
+        int res[]=new int[3];
+        int a=num.charAt(0);
+        int b=num.charAt(1);
+        int c=num.charAt(2);
+        
+        if (a>b&&a>c){
+            res[0]=a;
+            if (b>c){
+                res[1]=b;
+                res[2]=c;
+            }
+        
+        
+        return res;
     }
     
     private int[] ordenaCuatro(String num){
