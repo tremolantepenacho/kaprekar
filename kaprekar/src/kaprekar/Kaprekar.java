@@ -22,8 +22,15 @@ public class Kaprekar {
      */
     public static void main(String[] args) {
       
-        ArrayList resultado=leeEntrada();
-        generaSalida(resultado);
+        /*ArrayList resultado=leeEntrada();
+        generaSalida(resultado);*/
+        int res[]=new int[2];
+        res=ordenaDos("15");
+        System.out.println(res[0]+" "+res[1]);
+      /*  res=ordenaDos("51");
+        System.out.println(res[0]+" "+res[1]);
+        res=ordenaDos("55");
+        System.out.println(res[0]+" "+res[1]);*/
     }
     
        
@@ -96,42 +103,250 @@ public class Kaprekar {
         return res;
          
     }
-    private int[] ordenaDos(String num){
+    private static int[] ordenaDos(String num){
         
         int res[]=new int[2];
-        int uno=num.charAt(0);
-        int dos=num.charAt(1);
-        if (uno>dos){
-            res[0]=uno;
-            res[1]=dos;
+        int a=num.charAt(0);
+        int b=num.charAt(1);
+        if (a>b){
+            res[0]=a;
+            res[1]=b;
         }
         else{
-            res[0]=dos;
-            res[1]=uno;
+            res[0]=b;
+            res[1]=a;
         }
         return res;
     }
-    private int[] ordenaTres(String num){
+    private static int[] ordenaTres(String num){
         
         int res[]=new int[3];
         int a=num.charAt(0);
         int b=num.charAt(1);
         int c=num.charAt(2);
         
-        if (a>b&&a>c){
+        if (a> b&& a>c){
             res[0]=a;
             if (b>c){
                 res[1]=b;
                 res[2]=c;
             }
+            else{
+                res[1]=c;
+                res[2]=b;
+            }
+            return res;
+        }
         
+        if (b>a && b>c){
+            res[0]=b;
+            if (a>c){
+                res[1]=a;
+                res[2]=c;
+            }
+            else{
+                res[1]=c;
+                res[2]=a;
+            }
+            return res;
+        }
+        
+        if (c>a && c>b){
+            res[0]=c;
+            if (a>b){
+                res[1]=a;
+                res[2]=b;
+            }
+            else{
+                res[1]=b;
+                res[2]=a;
+            }
+            return res;
+        }
         
         return res;
     }
     
-    private int[] ordenaCuatro(String num){
+    private static int[] ordenaCuatro(String num){
+              
+        int res[]=new int[4];
+        int a=num.charAt(0);
+        int b=num.charAt(1);
+        int c=num.charAt(2);
+        int d=num.charAt(3);
         
-    }
+        if (a>b && a>c && a>d){
+            res[0]=a;
+            if(b>c && b>d){
+                res[1]=b;
+                if(c>d){
+                    res[2]=c;
+                    res[3]=d;
+                    return res;
+                }
+                else {
+                    res[2]=d;
+                    res[3]=c;
+                    return res;
+                }
+            }
+            if (c>b && c>d){
+                res[1]=c;
+                if(b>d){
+                    res[2]=b;
+                    res[3]=d;
+                    return res;
+                }
+                else {
+                    res[2]=d;
+                    res[3]=b;
+                    return res;
+                }
+            }
+            if (d>b && d>c){
+                res[1]=d;
+                if(b>c){
+                    res[2]=b;
+                    res[3]=c;
+                    return res;
+                }
+                else {
+                    res[2]=c;
+                    res[3]=b;
+                    return res;
+                }
+            }
+        }
+        
+        if (b>a && b>c && b>d){
+            res[0]=b;
+            if(a>c && a>d){
+                res[1]=a;
+                if(c>d){
+                    res[2]=c;
+                    res[3]=d;
+                    return res;
+                }
+                else {
+                    res[2]=d;
+                    res[3]=c;
+                    return res;
+                }
+            }
+            if (c>a && c>d){
+                res[1]=c;
+                if(a>d){
+                    res[2]=a;
+                    res[3]=d;
+                    return res;
+                }
+                else {
+                    res[2]=d;
+                    res[3]=a;
+                    return res;
+                }
+            }
+            if (d>a && d>c){
+                res[1]=d;
+                if(a>c){
+                    res[2]=a;
+                    res[3]=c;
+                    return res;
+                }
+                else {
+                    res[2]=c;
+                    res[3]=a;
+                    return res;
+                }
+            }
+        }
+        
+        if (c>b && c>a && c>d){
+            res[0]=c;
+            if(b>a && b>d){
+                res[1]=b;
+                if(a>d){
+                    res[2]=a;
+                    res[3]=d;
+                    return res;
+                }
+                else {
+                    res[2]=d;
+                    res[3]=a;
+                    return res;
+                }
+            }
+            if (a>b && a>d){
+                res[1]=a;
+                if(b>d){
+                    res[2]=b;
+                    res[3]=d;
+                    return res;
+                }
+                else {
+                    res[2]=d;
+                    res[3]=b;
+                    return res;
+                }
+            }
+            if (d>b && d>a){
+                res[1]=d;
+                if(b>a){
+                    res[2]=b;
+                    res[3]=a;
+                    return res;
+                }
+                else {
+                    res[2]=a;
+                    res[3]=b;
+                    return res;
+                }
+            }
+        }
+        
+        if (d>b && d>c && d>a){
+            res[0]=d;
+            if(b>c && b>a){
+                res[1]=b;
+                if(c>a){
+                    res[2]=c;
+                    res[3]=a;
+                    return res;
+                }
+                else {
+                    res[2]=a;
+                    res[3]=c;
+                    return res;
+                }
+            }
+            if (c>b && c>a){
+                res[1]=c;
+                if(b>a){
+                    res[2]=b;
+                    res[3]=a;
+                    return res;
+                }
+                else {
+                    res[2]=a;
+                    res[3]=b;
+                    return res;
+                }
+            }
+            if (a>b && a>c){
+                res[1]=a;
+                if(b>c){
+                    res[2]=b;
+                    res[3]=c;
+                    return res;
+                }
+                else {
+                    res[2]=c;
+                    res[3]=b;
+                    return res;
+                }
+            }
+        }
+        return res;
     }
 }
 
