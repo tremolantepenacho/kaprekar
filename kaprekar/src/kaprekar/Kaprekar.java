@@ -78,7 +78,7 @@ public class Kaprekar {
             diferencia=ascDesc[0]-ascDesc[1];
             i++;
         }
-        while (diferencia!=0);
+        while (diferencia!=6174);
         
         
         return i;
@@ -133,8 +133,9 @@ public class Kaprekar {
             res[0]=a;
             res[1]=b;
             res[2]=c;
+            return res;
         }
-        if (a>b && a>c){
+        if (a>=b && a>=c){
             res[0]=a;
             if (b>c){
                 res[1]=b;
@@ -147,7 +148,7 @@ public class Kaprekar {
             return res;
         }
         
-        if (b>a && b>c){
+        if (b>=a && b>=c){
             res[0]=b;
             if (a>c){
                 res[1]=a;
@@ -160,7 +161,7 @@ public class Kaprekar {
             return res;
         }
         
-        if (c>a && c>b){
+        if (c>=a && c>=b){
             res[0]=c;
             if (a>b){
                 res[1]=a;
@@ -191,9 +192,9 @@ public class Kaprekar {
             res[3]=d;
         }
         
-        if (a>b && a>c && a>d){
+        if (a>=b && a>=c && a>=d){
             res[0]=a;
-            if(b>c && b>d){
+            if(b>=c && b>=d){
                 res[1]=b;
                 if(c>d){
                     res[2]=c;
@@ -206,7 +207,7 @@ public class Kaprekar {
                     return res;
                 }
             }
-            if (c>b && c>d){
+            if (c>=b && c>=d){
                 res[1]=c;
                 if(b>d){
                     res[2]=b;
@@ -219,7 +220,7 @@ public class Kaprekar {
                     return res;
                 }
             }
-            if (d>b && d>c){
+            if (d>=b && d>=c){
                 res[1]=d;
                 if(b>c){
                     res[2]=b;
@@ -234,9 +235,9 @@ public class Kaprekar {
             }
         }
         
-        if (b>a && b>c && b>d){
+        if (b>=a && b>=c && b>=d){
             res[0]=b;
-            if(a>c && a>d){
+            if(a>=c && a>=d){
                 res[1]=a;
                 if(c>d){
                     res[2]=c;
@@ -249,7 +250,7 @@ public class Kaprekar {
                     return res;
                 }
             }
-            if (c>a && c>d){
+            if (c>=a && c>=d){
                 res[1]=c;
                 if(a>d){
                     res[2]=a;
@@ -262,7 +263,7 @@ public class Kaprekar {
                     return res;
                 }
             }
-            if (d>a && d>c){
+            if (d>=a && d>=c){
                 res[1]=d;
                 if(a>c){
                     res[2]=a;
@@ -277,9 +278,9 @@ public class Kaprekar {
             }
         }
         
-        if (c>b && c>a && c>d){
+        if (c>=b && c>=a && c>=d){
             res[0]=c;
-            if(b>a && b>d){
+            if(b>=a && b>=d){
                 res[1]=b;
                 if(a>d){
                     res[2]=a;
@@ -292,7 +293,7 @@ public class Kaprekar {
                     return res;
                 }
             }
-            if (a>b && a>d){
+            if (a>=b && a>=d){
                 res[1]=a;
                 if(b>d){
                     res[2]=b;
@@ -305,7 +306,7 @@ public class Kaprekar {
                     return res;
                 }
             }
-            if (d>b && d>a){
+            if (d>=b && d>=a){
                 res[1]=d;
                 if(b>a){
                     res[2]=b;
@@ -320,9 +321,9 @@ public class Kaprekar {
             }
         }
         
-        if (d>b && d>c && d>a){
+        if (d>=b && d>=c && d>=a){
             res[0]=d;
-            if(b>c && b>a){
+            if(b>=c && b>=a){
                 res[1]=b;
                 if(c>a){
                     res[2]=c;
@@ -335,7 +336,7 @@ public class Kaprekar {
                     return res;
                 }
             }
-            if (c>b && c>a){
+            if (c>=b && c>=a){
                 res[1]=c;
                 if(b>a){
                     res[2]=b;
@@ -348,7 +349,7 @@ public class Kaprekar {
                     return res;
                 }
             }
-            if (a>b && a>c){
+            if (a>=b && a>=c){
                 res[1]=a;
                 if(b>c){
                     res[2]=b;
