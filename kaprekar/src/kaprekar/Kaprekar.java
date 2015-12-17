@@ -22,15 +22,10 @@ public class Kaprekar {
      */
     public static void main(String[] args) {
       
-        /*ArrayList resultado=leeEntrada();
-        generaSalida(resultado);*/
-        int res[]=new int[2];
-        res=ordenaDos("15");
-        System.out.println(res[0]+" "+res[1]);
-      /*  res=ordenaDos("51");
-        System.out.println(res[0]+" "+res[1]);
-        res=ordenaDos("55");
-        System.out.println(res[0]+" "+res[1]);*/
+        ArrayList resultado=leeEntrada();
+        generaSalida(resultado);
+         
+       
     }
     
        
@@ -106,8 +101,8 @@ public class Kaprekar {
     private static int[] ordenaDos(String num){
         
         int res[]=new int[2];
-        int a=num.charAt(0);
-        int b=num.charAt(1);
+        int a=num.charAt(0)-48;
+        int b=num.charAt(1)-48;
         if (a>b){
             res[0]=a;
             res[1]=b;
@@ -116,16 +111,22 @@ public class Kaprekar {
             res[0]=b;
             res[1]=a;
         }
+        
         return res;
     }
     private static int[] ordenaTres(String num){
         
         int res[]=new int[3];
-        int a=num.charAt(0);
-        int b=num.charAt(1);
-        int c=num.charAt(2);
+        int a=num.charAt(0)-48;
+        int b=num.charAt(1)-48;
+        int c=num.charAt(2)-48;
         
-        if (a> b&& a>c){
+        if(a==b && b==c) {
+            res[0]=a;
+            res[1]=b;
+            res[2]=c;
+        }
+        if (a>b && a>c){
             res[0]=a;
             if (b>c){
                 res[1]=b;
@@ -170,10 +171,17 @@ public class Kaprekar {
     private static int[] ordenaCuatro(String num){
               
         int res[]=new int[4];
-        int a=num.charAt(0);
-        int b=num.charAt(1);
-        int c=num.charAt(2);
-        int d=num.charAt(3);
+        int a=num.charAt(0)-48;
+        int b=num.charAt(1)-48;
+        int c=num.charAt(2)-48;
+        int d=num.charAt(3)-48;
+        
+        if(a==b && b==c && c==d) {
+            res[0]=a;
+            res[1]=b;
+            res[2]=c;
+            res[3]=d;
+        }
         
         if (a>b && a>c && a>d){
             res[0]=a;
