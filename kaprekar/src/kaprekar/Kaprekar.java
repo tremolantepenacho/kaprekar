@@ -69,15 +69,23 @@ public class Kaprekar {
         
         if (Integer.parseInt(num)%1111==0) return 8;
         if (Integer.parseInt(num)==6174) return 0;
+        int ascDesc[];
+        int diferencia=Integer.parseInt(num);
+        //int diferencia;
+        int i=0;
+        do{
+            ascDesc=obtieneAscDesc(Integer.toString(diferencia));
+            diferencia=ascDesc[0]-ascDesc[1];
+            i++;
+        }
+        while (diferencia!=0);
         
-        int ascendente,descendente;
         
-        
-        return 0;
+        return i;
     }
     
-    private int[] obtieneAscDesc(String num){
-        int res[]=new int[2];
+    private static int[] obtieneAscDesc(String num){
+        int res[]=new int[4];
         switch (num.length()) {
             case 1:  res[0]=Integer.parseInt(num);
                      res[1]=res[0]*1000;
