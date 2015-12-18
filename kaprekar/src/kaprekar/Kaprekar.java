@@ -8,7 +8,6 @@ package kaprekar;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.ArrayList;
 
 /**
@@ -20,50 +19,30 @@ public class Kaprekar {
     /**
      * @param args the command line arguments
      */
+  
+    
     public static void main(String[] args) {
-      
-        ArrayList resultado=leeEntrada();
-        generaSalida(resultado);
-         
-       
-    }
-    
-       
         
-    
-    public static ArrayList leeEntrada(){
-
-        try {
+         try {
            InputStreamReader isr = new InputStreamReader(System.in);
            BufferedReader br = new BufferedReader (isr);
            String texto = br.readLine();
         //   System.out.println("Entrada leida "+texto);
            int cantidad=Integer.parseInt(texto);
-           ArrayList<String> lista=new ArrayList<>();
+          
            for (int i=0;i<cantidad;i++){
-               lista.add(br.readLine());    
+               System.out.println(obtieneKaprekar(br.readLine()));    
                
             }
-           return lista;
            }
            
         
         catch(IOException io) {
             System.out.println("No hay caracteres disponibles");
         }
+    }   
         
-        return null;
-    
-    }
-    
-    public static void generaSalida(ArrayList res){
-        
-        for (int i=0;i<res.size();i++){
-            
-            System.out.println(obtieneKaprekar((String)res.get(i)));
-        }
-    }
-    
+       
     public static int obtieneKaprekar(String num){
        
         
