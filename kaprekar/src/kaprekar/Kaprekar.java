@@ -66,8 +66,8 @@ public class Kaprekar {
     private static int[] obtieneAscDesc(String num){
         int res[]=new int[4];
         switch (num.length()) {
-            case 1:  res[0]=Integer.parseInt(num);
-                     res[1]=res[0]*1000;
+            case 1:  res[0]=Integer.parseInt(num)*1000;
+                     res[1]=Integer.parseInt(num);
                      return res;
             case 2:  int aux[]=ordenaDos(num);
                      res[0]=aux[0]*1000+aux[1]*100;
